@@ -1,0 +1,27 @@
+{
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Felipe Pedroso <felipe.sadler@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "start": "nodemon --ext js,graphql"
+  },
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "axios": "^0.25.0",
+    "graphql": "^14.2.1",
+    "graphql-import": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
