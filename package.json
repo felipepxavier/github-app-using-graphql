@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start-graphql": "yarn workspace graphql-api start"
+  },
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
