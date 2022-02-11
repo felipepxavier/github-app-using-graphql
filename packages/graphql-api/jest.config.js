@@ -1,9 +1,7 @@
-const testPathIgnorePatterns = ['<rootDir>/index.js'];
-
 const options = {
   testEnvironment: 'node',
   verbose: true,
-  testPathIgnorePatterns,
+  collectCoverageFrom: ['**/*.js'],
 };
 
 module.exports = options;
