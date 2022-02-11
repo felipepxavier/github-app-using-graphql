@@ -1,0 +1,4 @@
+type Query {
+  user(input: UserInput): User
+  userRepositories(input: UserInput): ResponseRepositories
+}

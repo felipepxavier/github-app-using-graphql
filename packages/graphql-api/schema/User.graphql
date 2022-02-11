@@ -1,0 +1,31 @@
+type User {
+  name: String
+  email: String
+  location: String
+  company: String
+  avatar_url: String
+  email: String
+}
+
+type Language {
+  name: String
+  color: String
+}
+
+type UserRepository {
+  id: Int
+  name: String
+  description: String
+  language: Language
+  url: String
+  visibility: String
+}
+
+type ResponseRepositories {
+  repositories: [UserRepository]
+  total: Int
+}
+
+input UserInput {
+  username: String
+}
