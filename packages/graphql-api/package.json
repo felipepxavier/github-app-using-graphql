@@ -14,7 +14,9 @@
   ],
   "scripts": {
     "start": "nodemon --ext js,graphql",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collectCoverage"
   },
   "dependencies": {
     "apollo-server": "^2.4.8",
