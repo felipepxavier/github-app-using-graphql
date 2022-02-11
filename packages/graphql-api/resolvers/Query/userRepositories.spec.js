@@ -32,4 +32,31 @@ describe('userRepositories()', () => {
     });
     expect(reposData.total).toBe(1);
   });
+
+  it('should resolve default language color', async () => {
+    api.get.mockResolvedValue({
+      data: [
+        {
+          id: 10,
+          name: 'felipe',
+          description: 'não informado',
+          svn_url: 'myUrl',
+          visibility: 'public',
+          language: 'LorenIpsun',
+        },
+      ],
+    });
+    const reposData = await userRepositories(
+      {},
+      {
+        input: { username: 'felipepxavier' },
+      }
+    );
+
+    expect(reposData.repositories[0].language).toEqual({
+      color: '#d2691e',
+      name: 'LorenIpsun',
+    });
+    expect(reposData.total).toBe(1);
+  });
 });
