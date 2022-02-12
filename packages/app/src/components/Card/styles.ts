@@ -5,7 +5,7 @@ export const Container = styled.div`
     padding: ${theme.spacings.medium};
     margin: ${theme.spacings.medium};
     border-radius: ${theme.border.radius};
-    background: ${theme.colors.primary};
+    background: ${theme.colors.secondary};
   `}
 `;
 
