@@ -97,4 +97,15 @@ describe('<Input />', () => {
       borderColor: '#4562ba',
     });
   });
+
+  it('should update border color if input blurred', () => {
+    const { container } = makeSut();
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+    fireEvent.focus(inputDefault);
+    fireEvent.blur(inputDefault);
+
+    expect(container.firstChild).toHaveStyle({
+      borderColor: '#737373',
+    });
+  });
 });
