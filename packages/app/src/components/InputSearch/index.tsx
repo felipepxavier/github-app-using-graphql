@@ -1,5 +1,5 @@
 function InputSearch() {
-  return <input />;
+  return <input placeholder="Digite o username" />;
 }
 
 export { InputSearch };
