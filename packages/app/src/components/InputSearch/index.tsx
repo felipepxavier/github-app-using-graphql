@@ -1,9 +1,11 @@
+import * as S from './styles';
+
 type InputProps = {
   onChange: (event: React.FormEvent<HTMLInputElement>) => void;
 };
 
 function InputSearch({ onChange }: InputProps) {
-  return <input onChange={onChange} placeholder="Digite o username" />;
+  return <S.Input onChange={onChange} placeholder="Digite o username" />;
 }
 
 export { InputSearch };
