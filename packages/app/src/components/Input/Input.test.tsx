@@ -18,4 +18,16 @@ describe('<InputSearch />', () => {
     fireEvent.change(inputDefault, { target: { value: 'changing' } });
     expect(onChangeMocked).toHaveBeenCalledTimes(1);
   });
+
+  it('should render placeholder correctly', () => {
+    const onChangeMocked = jest.fn();
+    const placeholderText = 'my placeholder';
+    renderWithTheme(
+      <Input onChange={onChangeMocked} placeholder={placeholderText} />
+    );
+
+    const inputDefault = screen.getByPlaceholderText(`${placeholderText}`);
+    fireEvent.change(inputDefault, { target: { value: 'changing' } });
+    expect(onChangeMocked).toHaveBeenCalledTimes(1);
+  });
 });
