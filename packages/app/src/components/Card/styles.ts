@@ -8,3 +8,5 @@ export const Container = styled.div`
     background: ${theme.colors.primary};
   `}
 `;
+
+export const Title = styled.h2``;
