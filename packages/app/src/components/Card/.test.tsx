@@ -9,6 +9,6 @@ describe('<Card />', () => {
     };
     renderWithTheme(<Card {...cardProps} />);
 
-    expect(screen.getByRole('heading', { name: /`pesquise um username`/i }));
+    expect(screen.getByRole('heading', { name: /pesquise um username/i }));
   });
 });

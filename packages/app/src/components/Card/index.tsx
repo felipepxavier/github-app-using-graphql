@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-type CardProps = {
+export type CardProps = {
   title: string;
 };
 function Card({ title }: CardProps) {
