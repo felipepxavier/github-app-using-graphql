@@ -5,8 +5,11 @@ import { renderWithTheme } from '../../utils/tests/helpers';
 const makeSut = ({
   placeholder = 'digite o username',
   onChange = jest.fn(),
+  isSearch = false,
 } = {}) => {
-  renderWithTheme(<Input onChange={onChange} placeholder={placeholder} />);
+  renderWithTheme(
+    <Input onChange={onChange} placeholder={placeholder} isSearch={isSearch} />
+  );
 };
 
 describe('<Input />', () => {

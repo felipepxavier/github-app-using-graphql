@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+export const Wrapper = styled.div``;
+
 export const Input = styled.input`
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
@@ -11,5 +13,13 @@ export const Input = styled.input`
     &:focus {
       border-color: ${theme.colors.primary};
     }
+  `}
+`;
+
+export const ButtonSearch = styled.button.attrs(() => ({
+  type: 'button',
+}))`
+  ${({ theme }) => css`
+    border-radius: ${theme.border.radius};
   `}
 `;
