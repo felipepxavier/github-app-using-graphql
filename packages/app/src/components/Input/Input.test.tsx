@@ -1,18 +1,18 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { InputSearch } from '.';
+import { Input } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
 
 describe('<InputSearch />', () => {
   it('should render input correctly', () => {
     const onChangeMocked = jest.fn();
-    renderWithTheme(<InputSearch onChange={onChangeMocked} />);
+    renderWithTheme(<Input onChange={onChangeMocked} />);
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     expect(inputDefault);
   });
   it('should call onChange function', () => {
     const onChangeMocked = jest.fn();
-    renderWithTheme(<InputSearch onChange={onChangeMocked} />);
+    renderWithTheme(<Input onChange={onChangeMocked} />);
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     fireEvent.change(inputDefault, { target: { value: 'changing' } });

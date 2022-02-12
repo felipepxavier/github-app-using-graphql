@@ -5,7 +5,7 @@ export const Input = styled.input`
     background-color: ${theme.colors.white};
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.small};
-    border: 2px solid ${theme.colors.secondary};
+    border: 2px solid ${theme.colors.gray};
     height: 3.8rem;
 
     &:focus {

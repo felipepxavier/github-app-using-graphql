@@ -1,11 +1,11 @@
 import * as S from './styles';
 
 export type InputProps = {
-  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
 };
 
-function InputSearch({ onChange }: InputProps) {
+function Input({ onChange }: InputProps) {
   return <S.Input onChange={onChange} placeholder="Digite o username" />;
 }
 
-export { InputSearch };
+export { Input };
