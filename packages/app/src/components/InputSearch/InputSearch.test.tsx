@@ -1,0 +1,12 @@
+import { screen } from '@testing-library/react';
+import { InputSearch } from '.';
+import { renderWithTheme } from '../../utils/tests/helpers';
+
+describe('<InputSearch />', () => {
+  it('should render input correctly', () => {
+    renderWithTheme(<InputSearch />);
+
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+    expect(inputDefault);
+  });
+});
