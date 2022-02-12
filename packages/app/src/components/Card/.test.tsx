@@ -7,7 +7,7 @@ describe('<Card />', () => {
     const cardProps = {
       title: 'Pesquise um username',
     };
-    renderWithTheme(<Card {...cardProps} />);
+    renderWithTheme(<Card {...cardProps}><span>children</span></Card>);
 
     expect(screen.getByRole('heading', { name: /pesquise um username/i }));
   });
