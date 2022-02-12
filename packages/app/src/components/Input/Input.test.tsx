@@ -63,4 +63,22 @@ describe('<Input />', () => {
 
     expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
   });
+
+  it('should call callbackOnClickButton with correctly value', () => {
+    const callbackOnClickButtonMocked = jest.fn();
+    makeSut({
+      callbackOnClickButton: callbackOnClickButtonMocked,
+    });
+
+    const currentValue = 'valueMocked';
+
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+    const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
+
+    fireEvent.change(inputDefault, { target: { value: `${currentValue}` } });
+    fireEvent.click(buttonSearch);
+
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledWith(currentValue);
+  });
 });
