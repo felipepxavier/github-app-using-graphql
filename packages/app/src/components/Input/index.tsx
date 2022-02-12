@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import * as S from './styles';
 
 export type InputProps = {
@@ -7,9 +8,23 @@ export type InputProps = {
 };
 
 function Input({ onChange, placeholder, isSearch = false }: InputProps) {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = useCallback(() => {
+    setIsFocused(true);
+  }, []);
+
+  const handleBlur = useCallback(() => {
+    setIsFocused(false);
+  }, []);
   return (
-    <S.Wrapper>
-      <S.Input onChange={onChange} placeholder={placeholder} />
+    <S.Wrapper isFocused={isFocused}>
+      <S.Input
+        onChange={onChange}
+        placeholder={placeholder}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
       {isSearch && <S.ButtonSearch>Pesquisar</S.ButtonSearch>}
     </S.Wrapper>
   );
