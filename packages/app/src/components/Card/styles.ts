@@ -6,7 +6,16 @@ export const Container = styled.div`
     margin: ${theme.spacings.medium};
     border-radius: ${theme.border.radius};
     background: ${theme.colors.secondary};
+
+    @media (min-width: 768px) {
+      max-width: 64rem;
+      margin: 8rem auto;
+    }
   `}
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  ${({ theme }) => css`
+    margin-bottom: ${theme.spacings.small};
+  `}
+`;
