@@ -47,4 +47,15 @@ describe('<Input />', () => {
     const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
     expect(buttonSearch).toBeInTheDocument();
   });
+
+  it('should call callbackOnClickButton if property isSearch is true', () => {
+    const callbackOnClickButtonMocked = jest.fn();
+    makeSut({
+      isSearch: true,
+      callbackOnClickButton: callbackOnClickButtonMocked,
+    });
+
+    const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
+    expect(buttonSearch).toBeInTheDocument();
+  });
 });
