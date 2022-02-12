@@ -2,6 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "bootstrap": "lerna bootstrap", 
+    "start": "lerna run start --stream" ,
     "start-graphql": "yarn workspace graphql-api start"
   },
   "workspaces": ["packages/*"],
