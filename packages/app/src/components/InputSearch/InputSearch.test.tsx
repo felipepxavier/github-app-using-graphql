@@ -4,7 +4,8 @@ import { renderWithTheme } from '../../utils/tests/helpers';
 
 describe('<InputSearch />', () => {
   it('should render input correctly', () => {
-    renderWithTheme(<InputSearch />);
+    const onChangeMocked = jest.fn();
+    renderWithTheme(<InputSearch onChange={onChangeMocked} />);
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     expect(inputDefault);
@@ -15,6 +16,6 @@ describe('<InputSearch />', () => {
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     fireEvent.change(inputDefault, { target: { value: 'changing' } });
-    expect(onChangeMocked).toHaveBeenCalledTimes(8);
+    expect(onChangeMocked).toHaveBeenCalledTimes(1);
   });
 });
