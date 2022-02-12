@@ -21,6 +21,7 @@ export default {
     primary: '#4562ba',
     secondary: '#eee',
     grayLight: '#ddd',
+    white: '#ffffff',
   },
   spacings: {
     xxsmall: '0.4rem',
