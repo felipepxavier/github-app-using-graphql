@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const user = require('./user');
 const userRepositories = require('./userRepositories');
 
