@@ -15,5 +15,5 @@ export const WithButton: Story<InputProps> = (args) => <Input {...args} />;
 
 WithButton.args = {
   placeholder: 'my placeholder',
-  isSearch: true,
+  callbackOnClickButton: () => ({}),
 };

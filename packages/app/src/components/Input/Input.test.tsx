@@ -1,14 +1,18 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { Input } from '.';
+import { Input, InputProps } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
 
 const makeSut = ({
   placeholder = 'digite o username',
   onChange = jest.fn(),
-  isSearch = false,
-} = {}) => {
+  callbackOnClickButton = undefined,
+}: InputProps = {}) => {
   renderWithTheme(
-    <Input onChange={onChange} placeholder={placeholder} isSearch={isSearch} />
+    <Input
+      onChange={onChange}
+      placeholder={placeholder}
+      callbackOnClickButton={callbackOnClickButton}
+    />
   );
 };
 
@@ -41,21 +45,22 @@ describe('<Input />', () => {
     expect(inputDefault).toBeInTheDocument();
   });
 
-  it('should render button inside input if property isSearch is true', () => {
-    makeSut({ isSearch: true });
+  it('should render button inside input if property callbackOnClickButton is existing', () => {
+    makeSut({ callbackOnClickButton: jest.fn() });
 
     const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
     expect(buttonSearch).toBeInTheDocument();
   });
 
-  it('should call callbackOnClickButton if property isSearch is true', () => {
+  it('should call callbackOnClickButton if property callbackOnClickButton is existing', () => {
     const callbackOnClickButtonMocked = jest.fn();
     makeSut({
-      isSearch: true,
       callbackOnClickButton: callbackOnClickButtonMocked,
     });
 
     const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
-    expect(buttonSearch).toBeInTheDocument();
+    fireEvent.click(buttonSearch);
+
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
   });
 });
