@@ -37,4 +37,11 @@ describe('<Input />', () => {
     const inputDefault = screen.getByPlaceholderText(`${placeholderText}`);
     expect(inputDefault).toBeInTheDocument();
   });
+
+  it('should render button inside input if property isSearch is true', () => {
+    makeSut({ isSearch: true });
+
+    const buttonSearch = screen.getByRole('button', { name: /pesquisar/i });
+    expect(buttonSearch).toBeInTheDocument();
+  });
 });
