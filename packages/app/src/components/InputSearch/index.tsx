@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-type InputProps = {
+export type InputProps = {
   onChange: (event: React.FormEvent<HTMLInputElement>) => void;
 };
 
