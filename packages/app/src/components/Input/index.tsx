@@ -3,7 +3,7 @@ import * as S from './styles';
 
 export type InputProps = {
   placeholder?: string;
-  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
   callbackOnClickButton?: (value: string) => void;
 };
 
@@ -22,7 +22,7 @@ function Input({ onChange, placeholder, callbackOnClickButton }: InputProps) {
     <S.Wrapper isFocused={isFocused}>
       <S.Input
         onChange={(event) => {
-          onChange && onChange(event);
+          onChange(event);
           callbackOnClickButton && setCurrentValue(event.target.value);
         }}
         placeholder={placeholder}

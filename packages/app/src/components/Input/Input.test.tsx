@@ -1,13 +1,19 @@
-import { fireEvent, screen } from '@testing-library/react';
-import { Input, InputProps } from '.';
+import { fireEvent, screen, RenderResult } from '@testing-library/react';
+import { Input } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
+
+export type makeSutProps = {
+  placeholder?: string;
+  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  callbackOnClickButton?: (value: string) => void;
+};
 
 const makeSut = ({
   placeholder = 'digite o username',
   onChange = jest.fn(),
   callbackOnClickButton = undefined,
-}: InputProps = {}) => {
-  renderWithTheme(
+}: makeSutProps = {}): RenderResult => {
+  return renderWithTheme(
     <Input
       onChange={onChange}
       placeholder={placeholder}
@@ -80,5 +86,15 @@ describe('<Input />', () => {
 
     expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
     expect(callbackOnClickButtonMocked).toHaveBeenCalledWith(currentValue);
+  });
+
+  it('should update border color if input focused', () => {
+    const { container } = makeSut();
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+    fireEvent.focus(inputDefault);
+
+    expect(container.firstChild).toHaveStyle({
+      borderColor: '#4562ba',
+    });
   });
 });
