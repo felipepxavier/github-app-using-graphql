@@ -7,3 +7,7 @@ export default {
 };
 
 export const Default: Story<InputProps> = (args) => <Input {...args} />;
+
+Default.args = {
+  placeholder: 'my placeholder',
+};

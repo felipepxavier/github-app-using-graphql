@@ -1,11 +1,12 @@
 import * as S from './styles';
 
 export type InputProps = {
+  placeholder?: string;
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
 };
 
-function Input({ onChange }: InputProps) {
-  return <S.Input onChange={onChange} placeholder="Digite o username" />;
+function Input({ onChange, placeholder }: InputProps) {
+  return <S.Input onChange={onChange} placeholder={placeholder} />;
 }
 
 export { Input };

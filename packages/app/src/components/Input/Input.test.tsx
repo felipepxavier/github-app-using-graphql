@@ -2,17 +2,27 @@ import { fireEvent, screen } from '@testing-library/react';
 import { Input } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
 
-describe('<InputSearch />', () => {
+const makeSut = ({
+  placeholder = 'digite o username',
+  onChange = jest.fn(),
+} = {}) => {
+  renderWithTheme(<Input onChange={onChange} placeholder={placeholder} />);
+};
+
+describe('<Input />', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should render input correctly', () => {
-    const onChangeMocked = jest.fn();
-    renderWithTheme(<Input onChange={onChangeMocked} />);
+    makeSut();
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     expect(inputDefault);
   });
   it('should call onChange function', () => {
     const onChangeMocked = jest.fn();
-    renderWithTheme(<Input onChange={onChangeMocked} />);
+    makeSut({ onChange: onChangeMocked });
 
     const inputDefault = screen.getByPlaceholderText(/digite o username/i);
     fireEvent.change(inputDefault, { target: { value: 'changing' } });
@@ -20,14 +30,11 @@ describe('<InputSearch />', () => {
   });
 
   it('should render placeholder correctly', () => {
-    const onChangeMocked = jest.fn();
     const placeholderText = 'my placeholder';
-    renderWithTheme(
-      <Input onChange={onChangeMocked} placeholder={placeholderText} />
-    );
+
+    makeSut({ placeholder: placeholderText });
 
     const inputDefault = screen.getByPlaceholderText(`${placeholderText}`);
-    fireEvent.change(inputDefault, { target: { value: 'changing' } });
-    expect(onChangeMocked).toHaveBeenCalledTimes(1);
+    expect(inputDefault).toBeInTheDocument();
   });
 });
