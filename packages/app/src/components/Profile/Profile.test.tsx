@@ -5,10 +5,15 @@ import { Profile } from '.';
 describe('<Profile />', () => {
   it('should render informations correctly', () => {
     const myInfo = {
-      avatar_url: 'https://avatars.githubusercontent.com/u/420001?v=4',
+      avatar_url: 'https://avatars.githubusercontent.com/u/43517062?v=4',
       email: 'felipe@gmail.com',
       location: 'Denver, CO',
-      name: 'Felipe Oduardo Sierra',
+      name: 'Felipe Pedroso Xavier',
+      username: 'felipepxavier',
+      public_repos: 32,
+      bio: 'Loren ipsun',
+      followers: 15,
+      following: 10,
     };
     renderWithTheme(<Profile userData={myInfo} />);
 
