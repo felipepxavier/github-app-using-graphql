@@ -6,6 +6,10 @@ type User {
   avatar_url: String
   email: String
   username: String
+  public_repos: Int
+  bio: String
+  followers: Int
+  following: Int
 }
 
 type Language {

@@ -8,6 +8,10 @@ export const GET_USER = gql`
       avatar_url
       location
       username
+      public_repos
+      bio
+      followers
+      following
     }
   }
 `;
