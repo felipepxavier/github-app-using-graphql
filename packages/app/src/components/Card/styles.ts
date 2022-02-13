@@ -14,8 +14,14 @@ export const Container = styled.div`
   `}
 `;
 
-export const Title = styled.h2`
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+
   ${({ theme }) => css`
     margin-bottom: ${theme.spacings.small};
+    gap: ${theme.spacings.xxsmall};
   `}
 `;
+
+export const Title = styled.h2``;
