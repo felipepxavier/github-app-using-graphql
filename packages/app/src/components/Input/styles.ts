@@ -37,9 +37,15 @@ export const ButtonSearch = styled.button.attrs(() => ({
     padding: ${theme.spacings.xxsmall} ${theme.spacings.small};
     right: ${theme.spacings.xxsmall};
     color: ${theme.colors.white};
+    font-weight: ${theme.font.bold};
     background-color: ${theme.colors.primary};
+    transition: filter 300ms;
     border: none;
     top: 0.2rem;
     height: 3rem;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
   `}
 `;
