@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../utils/tests/helpers';
+import { renderWithThemeEndRouter } from '../../utils/tests/helpers';
 import { Profile } from '.';
 
 describe('<Profile />', () => {
@@ -15,7 +15,7 @@ describe('<Profile />', () => {
       followers: 15,
       following: 10,
     };
-    renderWithTheme(<Profile userData={myInfo} />);
+    renderWithThemeEndRouter(<Profile userData={myInfo} />);
 
     const avatar = screen.getByRole('img');
 
@@ -37,12 +37,14 @@ describe('<Profile />', () => {
       followers: 15,
       following: 10,
     };
-    renderWithTheme(<Profile userData={myInfo} />);
+    renderWithThemeEndRouter(<Profile userData={myInfo} />);
 
-    const buttonRepositories = screen.getByRole('button', {
-      name: /repositorios/i,
-    });
+    const buttonRepositories = screen.getByRole('link');
 
     expect(buttonRepositories).toBeInTheDocument();
+    expect(buttonRepositories).toHaveAttribute(
+      'href',
+      `/repositorios/${myInfo.username}`
+    );
   });
 });
