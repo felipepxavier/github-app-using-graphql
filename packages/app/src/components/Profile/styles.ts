@@ -4,6 +4,25 @@ import { Link } from 'react-router-dom';
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
+
+  ${({ theme }) => css`
+    margin: ${theme.spacings.large} ${theme.spacings.small};
+  `}
+
+  @media (min-width: 768px) {
+    background-color: rgba(69, 98, 186, 0.1);
+
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    ${({ theme }) => css`
+      padding: ${theme.spacings.small};
+      border-radius: ${theme.border.radius};
+    `}
+  }
 `;
 
 export const Header = styled.div`
@@ -24,6 +43,9 @@ export const Avatar = styled.img`
   border-radius: 50%;
   width: 100%;
   max-width: 6rem;
+  ${({ theme }) => css`
+    border: 0.2rem solid ${theme.colors.primary};
+  `}
 
   @media (min-width: 768px) {
     max-width: 18rem;
@@ -32,8 +54,14 @@ export const Avatar = styled.img`
 
 export const Name = styled.h3`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xxlarge};
+    font-size: ${theme.font.sizes.xlarge};
   `}
+
+  @media (min-width: 768px) {
+    ${({ theme }) => css`
+      font-size: ${theme.font.sizes.xxlarge};
+    `}
+  }
 `;
 
 export const Username = styled.p`
@@ -80,10 +108,6 @@ export const ButtonRepositories = styled(Link)`
 
     &:hover {
       filter: brightness(1.2);
-    }
-
-    @media (min-width: 768px) {
-      max-width: 38rem;
     }
   `}
 `;
