@@ -5,6 +5,7 @@ type User {
   company: String
   avatar_url: String
   email: String
+  username: String
 }
 
 type Language {

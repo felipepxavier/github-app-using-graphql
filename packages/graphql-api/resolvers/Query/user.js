@@ -3,7 +3,8 @@ const api = require('../../services/api');
 module.exports = {
   async user(_, { input: { username } }) {
     const responseInfo = await api.get(`users/${username}`);
-    const { name, email, location, avatar_url, company } = responseInfo.data;
+    const { name, email, location, avatar_url, company, login } =
+      responseInfo.data;
 
     return {
       name,
@@ -11,6 +12,7 @@ module.exports = {
       location,
       avatar_url,
       company,
+      username: login,
     };
   },
 };
