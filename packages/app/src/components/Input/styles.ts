@@ -25,6 +25,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
 export const Input = styled.input`
   height: 100%;
+  width: calc(100% - 9.4rem);
   border: none;
 `;
 
@@ -34,7 +35,7 @@ export const ButtonSearch = styled.button.attrs(() => ({
   ${({ theme }) => css`
     position: absolute;
     border-radius: ${theme.border.radius};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.small};
+    padding: 0 ${theme.spacings.small};
     right: ${theme.spacings.xxsmall};
     color: ${theme.colors.white};
     font-weight: ${theme.font.bold};
@@ -42,7 +43,7 @@ export const ButtonSearch = styled.button.attrs(() => ({
     transition: filter 300ms;
     border: none;
     top: 0.2rem;
-    height: 3rem;
+    line-height: 3rem;
 
     &:hover {
       filter: brightness(1.2);
