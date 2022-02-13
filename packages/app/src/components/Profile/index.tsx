@@ -65,9 +65,11 @@ function Profile({ userData }: ProfileProps) {
             </S.ItemInfo>
           </S.ListInfo>
 
-          <S.ButtonRepositories to={`/repositorios/${userData.username}`}>
-            Repositórios
-          </S.ButtonRepositories>
+          <S.Footer>
+            <S.ButtonRepositories to={`/repositorios/${userData.username}`}>
+              Repositórios
+            </S.ButtonRepositories>
+          </S.Footer>
         </>
       )}
     </S.Container>

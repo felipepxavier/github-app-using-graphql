@@ -6,7 +6,11 @@ export default {
   component: Profile,
 };
 
-export const Default: Story<ProfileProps> = (args) => <Profile {...args} />;
+export const Default: Story<ProfileProps> = (args) => (
+  <div style={{ maxWidth: '55rem', margin: 'auto' }}>
+    <Profile {...args} />
+  </div>
+);
 Default.args = {
   userData: {
     avatar_url: 'https://avatars.githubusercontent.com/u/43517062?v=4',

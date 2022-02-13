@@ -62,4 +62,36 @@ export const FieldDefault = styled.span`
   `}
 `;
 
-export const ButtonRepositories = styled(Link)``;
+export const ButtonRepositories = styled(Link)`
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
+    border-radius: ${theme.border.radius};
+    padding: 0 ${theme.spacings.medium};
+    font-weight: ${theme.font.bold};
+    font-size: ${theme.font.sizes.medium};
+    transition: filter 300ms;
+    line-height: 3.8rem;
+    text-align: center;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @media (min-width: 768px) {
+      max-width: 38rem;
+    }
+  `}
+`;
+
+export const Footer = styled.div`
+  text-align: center;
+
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.small};
+  `}
+`;
