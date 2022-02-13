@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   display: flex;
@@ -60,3 +61,5 @@ export const FieldDefault = styled.span`
     font-size: ${theme.font.sizes.medium};
   `}
 `;
+
+export const ButtonRepositories = styled(Link)``;
