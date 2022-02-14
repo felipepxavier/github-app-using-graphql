@@ -4,6 +4,7 @@ import { Card } from 'components/Card';
 import { Input } from 'components/Input';
 import { FaGithub } from 'react-icons/fa';
 import { Profile } from 'components/Profile';
+import { Loading } from 'components/Loading';
 import * as S from './styles';
 
 function Main() {
@@ -26,11 +27,7 @@ function Main() {
           {error && <S.ErrorMessage>Nada encontrado :/</S.ErrorMessage>}
         </>
       </Card>
-      {loading && (
-        <S.LoaderContainer>
-          <S.Loader />
-        </S.LoaderContainer>
-      )}
+      {loading && <Loading />}
     </>
   );
 }
