@@ -24,4 +24,8 @@ export const Header = styled.header`
   `}
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.large};
+  `}
+`;
