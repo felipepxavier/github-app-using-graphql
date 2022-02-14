@@ -1,7 +1,7 @@
 const options = {
   testEnvironment: 'node',
   verbose: true,
-  collectCoverageFrom: ['**/*.js'],
+  collectCoverageFrom: ['**/*.js', '!services/**'],
   coveragePathIgnorePatterns: ['coverage/*', 'jest.config.js'],
 };
 

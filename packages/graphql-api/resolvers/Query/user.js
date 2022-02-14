@@ -18,8 +18,8 @@ module.exports = {
 
     return {
       name,
-      email,
-      location,
+      email: email || 'Não cadastrado',
+      location: location || 'Não cadastrado',
       avatar_url,
       company,
       username: login,
