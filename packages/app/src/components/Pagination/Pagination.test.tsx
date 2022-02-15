@@ -36,7 +36,7 @@ describe('<Pagination />', () => {
     expect(screen.getByText('Pág. 3 de 11')).toBeInTheDocument();
   });
 
-  it('should not change current page if not exists', () => {
+  it('should not change current page if not exists (previous)', () => {
     renderWithTheme(<Pagination totalReposities={110} perPage={10} />);
     const previousButton = screen.getByRole('button', {
       name: 'Página anterior',
@@ -44,5 +44,15 @@ describe('<Pagination />', () => {
 
     fireEvent.click(previousButton);
     expect(screen.getByText('Pág. 1 de 11')).toBeInTheDocument();
+  });
+
+  it('should not change current page if is equal to total pages', () => {
+    renderWithTheme(<Pagination totalReposities={6} perPage={3} />);
+    const nextButton = screen.getByRole('button', { name: 'Próxima página' });
+
+    fireEvent.click(nextButton);
+    fireEvent.click(nextButton);
+
+    expect(screen.getByText('Pág. 2 de 2')).toBeInTheDocument();
   });
 });
