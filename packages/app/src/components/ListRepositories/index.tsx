@@ -12,6 +12,7 @@ type RepositoryProps = {
   name: string;
   visibility: string;
   language: LanguageProps;
+  url: string;
 };
 
 export type ListProps = {
@@ -59,6 +60,7 @@ function ListRepositories({ listData }: ListProps) {
               {expandedButton[repository.name] && (
                 <S.ContentMoreInfo>
                   <S.InfoText>{repository.description}</S.InfoText>
+                  <S.InfoText>{repository.url}</S.InfoText>
                   <S.Status> {repository.visibility} </S.Status>
                 </S.ContentMoreInfo>
               )}

@@ -17,6 +17,7 @@ Default.args = {
       language: { name: 'TypeScript', color: '#0076c6' },
       name: 'apple-music-web-player',
       visibility: 'public',
+      url: 'http://github.com/myrepos',
     },
     {
       description:
@@ -24,6 +25,7 @@ Default.args = {
       language: { name: 'Não cadastrado', color: '#d2691e' },
       name: 'artillery-plugin-aws-sigv4',
       visibility: 'public',
+      url: 'http://github.com/myrepos',
     },
   ],
 };
