@@ -3,7 +3,7 @@ import * as S from './styles';
 
 export type InputProps = {
   placeholder?: string;
-  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   callbackOnClickButton?: (value: string) => void;
 };
 
