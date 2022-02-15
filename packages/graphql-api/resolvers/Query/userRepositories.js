@@ -26,7 +26,7 @@ module.exports = {
         url,
         visibility,
         language: {
-          name: language,
+          name: language || 'não informado',
           color: setColorLanguage(language),
         },
       })
