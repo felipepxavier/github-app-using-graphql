@@ -7,12 +7,11 @@ export const Container = styled.ul`
 export const Repository = styled.li`
   ${({ theme }) => css`
     color: ${theme.colors.gray};
-    padding: ${theme.spacings.small};
+    padding: 1rem ${theme.spacings.small};
     border-radius: ${theme.border.radius};
     background-color: rgba(69, 98, 186, 0.1);
     margin: ${theme.spacings.small};
-    display: flex;
-    justify-content: space-between;
+
     border: solid 2px ${theme.colors.blueLight};
     transition: all 250ms;
 
@@ -35,5 +34,30 @@ export const Language = styled.span<Pick<LanguageProps, 'color'>>`
     padding: ${theme.spacings.xxsmall} ${theme.spacings.xsmall};
     border-radius: ${theme.border.radius};
     background-color: ${color};
+  `}
+`;
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  ${({ theme }) => css`
+    padding: ${theme.spacings.small} 0;
+  `}
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  ${({ theme }) => css`
+  > svg {
+    font-size: ${theme.font.sizes.xxlarge};
+    transition: transform 250ms;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.6);
+    }
   `}
 `;

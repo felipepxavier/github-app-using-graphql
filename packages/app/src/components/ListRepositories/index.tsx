@@ -1,3 +1,4 @@
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import * as S from './styles';
 
 export type LanguageProps = {
@@ -22,14 +23,24 @@ function ListRepositories({ listData }: ListProps) {
       {listData.map((repository) => (
         <S.Repository key={repository.name}>
           <>
-            <S.Title>{repository.name}</S.Title>
+            <S.Content>
+              <S.Title>{repository.name}</S.Title>
 
-            <S.Language color={repository.language.color}>
-              {repository.language.name}
-            </S.Language>
+              <S.Language color={repository.language.color}>
+                {repository.language.name}
+              </S.Language>
+            </S.Content>
 
             {/* {repository.description}
             {repository.visibility} */}
+
+            <S.Footer>
+              <MdKeyboardArrowDown
+                role="button"
+                aria-label="abrir mais informações do repositório"
+                aria-expanded="false"
+              />
+            </S.Footer>
           </>
         </S.Repository>
       ))}

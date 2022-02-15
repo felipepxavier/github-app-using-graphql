@@ -43,8 +43,9 @@ describe('<ListRepositories />', () => {
         visibility: 'public',
       },
     ];
-    renderWithTheme(<ListRepositories listData={list} />);
+    const { container } = renderWithTheme(<ListRepositories listData={list} />);
 
-    expect(screen.getByTestId('more-info')).toBeInTheDocument();
+    const buttonSvg = container.querySelector('svg');
+    expect(buttonSvg).toBeInTheDocument();
   });
 });
