@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import * as S from './styles';
 
@@ -18,6 +19,7 @@ export type ListProps = {
 };
 
 function ListRepositories({ listData }: ListProps) {
+  const [expandedButton, setExpandedButton] = useState(false);
   return (
     <S.Container>
       {listData.map((repository) => (
@@ -37,7 +39,8 @@ function ListRepositories({ listData }: ListProps) {
             <S.Footer>
               <S.ButtonMoreInfo
                 aria-label="abrir mais informações do repositório"
-                aria-expanded="false"
+                aria-expanded={expandedButton}
+                onClick={() => setExpandedButton(!expandedButton)}
               >
                 <MdKeyboardArrowDown />
               </S.ButtonMoreInfo>
