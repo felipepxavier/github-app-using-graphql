@@ -7,7 +7,7 @@ export type LanguageProps = {
   color: string;
 };
 
-type RepositoryProps = {
+export type RepositoryProps = {
   description: string;
   name: string;
   visibility: string;

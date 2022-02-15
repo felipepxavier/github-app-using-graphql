@@ -7,7 +7,9 @@ export default {
 };
 
 export const Default: Story<ListProps> = (args) => (
-  <ListRepositories {...args} />
+  <div style={{ maxWidth: '55rem', margin: 'auto' }}>
+    <ListRepositories {...args} />
+  </div>
 );
 
 Default.args = {

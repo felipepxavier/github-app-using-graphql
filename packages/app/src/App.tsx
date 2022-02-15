@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 import GlobalStyles from './styles/global';
 import Main from 'pages/Main';
+import Repositories from 'pages/Repositories';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/repositorios/:username" element={<Main />} />
+          <Route path="/repositorios/:username" element={<Repositories />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
