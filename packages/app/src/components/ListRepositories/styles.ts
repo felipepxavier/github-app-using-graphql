@@ -4,6 +4,7 @@ import { LanguageProps } from '.';
 export const Container = styled.ul`
   list-style: none;
 `;
+
 export const Repository = styled.li`
   ${({ theme }) => css`
     color: ${theme.colors.gray};
@@ -88,6 +89,7 @@ export const ContentMoreInfo = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const InfoText = styled.p`
   ${({ theme }) => css`
     padding: ${theme.spacings.xsmall} 0;
@@ -103,5 +105,15 @@ export const Status = styled.span`
     color: ${theme.colors.white};
     background-color: ${theme.colors.gray};
     width: max-content;
+  `}
+`;
+
+export const LinkRepository = styled.a`
+  width: max-content;
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall} 0;
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.gray};
+    font-weight: ${theme.font.bold};
   `}
 `;

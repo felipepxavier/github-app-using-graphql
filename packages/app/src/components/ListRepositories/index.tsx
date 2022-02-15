@@ -61,7 +61,10 @@ function ListRepositories({ listData }: ListProps) {
               {expandedButton[repository.name] && (
                 <S.ContentMoreInfo>
                   <S.InfoText>{repository.description}</S.InfoText>
-                  <S.InfoText>{repository.url}</S.InfoText>
+
+                  <S.LinkRepository href={repository.url} target="_blank">
+                    Visualizar no Github
+                  </S.LinkRepository>
                   <S.Status> {repository.visibility} </S.Status>
                 </S.ContentMoreInfo>
               )}
