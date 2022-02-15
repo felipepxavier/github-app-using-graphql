@@ -22,6 +22,7 @@ describe('<Pagination />', () => {
 
     expect(screen.getByText('Pág. 2 de 11')).toBeInTheDocument();
   });
+
   it('should change current page (previous)', () => {
     renderWithTheme(<Pagination totalReposities={110} perPage={10} />);
     const previousButton = screen.getByRole('button', {
@@ -54,5 +55,21 @@ describe('<Pagination />', () => {
     fireEvent.click(nextButton);
 
     expect(screen.getByText('Pág. 2 de 2')).toBeInTheDocument();
+  });
+
+  it('should call callback function if change current page', () => {
+    const callbackPageCurrentMocked = jest.fn();
+
+    renderWithTheme(
+      <Pagination
+        totalReposities={6}
+        perPage={3}
+        callbackPageCurrent={callbackPageCurrentMocked}
+      />
+    );
+    const nextButton = screen.getByRole('button', { name: 'Próxima página' });
+    fireEvent.click(nextButton);
+
+    expect(callbackPageCurrentMocked).toHaveBeenCalledTimes(1);
   });
 });
