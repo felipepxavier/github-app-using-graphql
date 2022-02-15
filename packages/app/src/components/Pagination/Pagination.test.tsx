@@ -41,12 +41,8 @@ describe('<Pagination />', () => {
     const previousButton = screen.getByRole('button', {
       name: 'Página anterior',
     });
-    const nextButton = screen.getByRole('button', { name: 'Próxima página' });
-    fireEvent.click(nextButton);
-    fireEvent.click(nextButton);
-    fireEvent.click(nextButton);
-    fireEvent.click(previousButton);
 
-    expect(screen.getByText('Pág. 3 de 11')).toBeInTheDocument();
+    fireEvent.click(previousButton);
+    expect(screen.getByText('Pág. 1 de 11')).toBeInTheDocument();
   });
 });
