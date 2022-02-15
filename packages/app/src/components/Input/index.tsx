@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { KeyboardEvent, useCallback, useState } from 'react';
 import * as S from './styles';
 
 export type InputProps = {
@@ -18,6 +18,13 @@ function Input({ onChange, placeholder, callbackOnClickButton }: InputProps) {
   const handleBlur = useCallback(() => {
     setIsFocused(false);
   }, []);
+
+  const handleEnter = (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      callbackOnClickButton && callbackOnClickButton(currentValue);
+    }
+  };
+
   return (
     <S.Wrapper isFocused={isFocused}>
       <S.Input
@@ -28,6 +35,7 @@ function Input({ onChange, placeholder, callbackOnClickButton }: InputProps) {
         placeholder={placeholder}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        onKeyPress={handleEnter}
       />
       {callbackOnClickButton && (
         <S.ButtonSearch onClick={() => callbackOnClickButton(currentValue)}>
