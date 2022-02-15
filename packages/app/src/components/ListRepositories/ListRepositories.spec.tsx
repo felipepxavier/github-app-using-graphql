@@ -14,7 +14,7 @@ describe('<ListRepositories />', () => {
       {
         description:
           'Plugin for artillery.io that signs HTTP requests using the AWS Signature V4 specification.',
-        language: { name: null, color: '#d2691e' },
+        language: { name: 'Não cadastrado', color: '#d2691e' },
         name: 'artillery-plugin-aws-sigv4',
         visibility: 'public',
       },
@@ -23,5 +23,7 @@ describe('<ListRepositories />', () => {
 
     expect(screen.getByText(list[0].name)).toBeInTheDocument();
     expect(screen.getByText(list[1].name)).toBeInTheDocument();
+    expect(screen.getByText(list[0].language.name)).toBeInTheDocument();
+    expect(screen.getByText(list[1].language.name)).toBeInTheDocument();
   });
 });
