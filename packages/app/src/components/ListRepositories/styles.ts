@@ -49,15 +49,22 @@ export const Content = styled.div`
 export const Footer = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const ButtonMoreInfo = styled.button.attrs(() => ({ type: 'button' }))`
+  border: none;
 
   ${({ theme }) => css`
   > svg {
     font-size: ${theme.font.sizes.xxlarge};
+    color: ${theme.colors.blueLight};
     transition: transform 250ms;
     cursor: pointer;
 
     &:hover {
       transform: scale(1.6);
+      color: ${theme.colors.primary};
     }
+    
   `}
 `;
