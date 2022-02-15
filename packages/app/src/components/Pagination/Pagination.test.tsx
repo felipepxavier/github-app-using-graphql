@@ -8,4 +8,10 @@ describe('<Pagination />', () => {
 
     expect(screen.getAllByRole('button')).toHaveLength(2);
   });
+
+  it('should calculate page quantity', () => {
+    renderWithTheme(<Pagination totalReposities={110} perPage={10} />);
+
+    expect(screen.getByText('Pág. 1 de 11')).toBeInTheDocument();
+  });
 });
