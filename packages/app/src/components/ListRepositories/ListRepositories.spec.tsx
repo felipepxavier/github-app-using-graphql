@@ -92,14 +92,13 @@ describe('<ListRepositories />', () => {
       },
     ];
 
-    renderWithTheme(<ListRepositories listData={list} />);
+    const { container } = renderWithTheme(<ListRepositories listData={list} />);
 
     const buttons = screen.getAllByRole('button');
     const firstButton = buttons[0];
-
     fireEvent.click(firstButton);
 
-    expect(list[0].description).toBeInTheDocument();
-    expect(list[0].visibility).toBeInTheDocument();
+    expect(container).toHaveTextContent(list[0].description);
+    expect(container).toHaveTextContent(list[0].visibility);
   });
 });

@@ -33,9 +33,6 @@ function ListRepositories({ listData }: ListProps) {
               </S.Language>
             </S.Content>
 
-            {/* {repository.description}
-            {repository.visibility} */}
-
             <S.Footer>
               <S.ButtonMoreInfo
                 aria-label="abrir mais informações do repositório"
@@ -44,6 +41,13 @@ function ListRepositories({ listData }: ListProps) {
               >
                 <MdKeyboardArrowDown />
               </S.ButtonMoreInfo>
+
+              {expandedButton && (
+                <S.ContentMoreInfo>
+                  <S.InfoText>{repository.description}</S.InfoText>
+                  <S.Status> {repository.visibility} </S.Status>
+                </S.ContentMoreInfo>
+              )}
             </S.Footer>
           </>
         </S.Repository>
