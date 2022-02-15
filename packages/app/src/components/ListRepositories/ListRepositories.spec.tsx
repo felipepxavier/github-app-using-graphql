@@ -109,4 +109,34 @@ describe('<ListRepositories />', () => {
     expect(container).toHaveTextContent(list[0].description);
     expect(container).toHaveTextContent(list[0].visibility);
   });
+
+  it('should rotate expanded button on clicked', () => {
+    const list = [
+      {
+        description: 'Apple Music web player',
+        language: { name: 'TypeScript', color: '#0076c6' },
+        name: 'apple-music-web-player',
+        visibility: 'public',
+        url: 'http://github.com/myrepos',
+      },
+      {
+        description:
+          'Plugin for artillery.io that signs HTTP requests using the AWS Signature V4 specification.',
+        language: { name: 'Não cadastrado', color: '#d2691e' },
+        name: 'artillery-plugin-aws-sigv4',
+        visibility: 'public',
+        url: 'http://github.com/myrepos',
+      },
+    ];
+
+    renderWithTheme(<ListRepositories listData={list} />);
+
+    const buttons = screen.getAllByRole('button');
+    const firstButton = buttons[0];
+    fireEvent.click(firstButton);
+
+    expect(firstButton.firstChild).toHaveStyle({
+      transform: 'rotate(180deg)',
+    });
+  });
 });
