@@ -83,4 +83,28 @@ describe('userRepositories()', () => {
     expect(reposData.repositories[0].description).toBe('não informado');
     expect(reposData.total).toBe(1);
   });
+
+  it('should resolve default name language', async () => {
+    api.get.mockResolvedValue({
+      data: [
+        {
+          id: 10,
+          name: 'felipe',
+          description: 'loren ipsun',
+          svn_url: 'myUrl',
+          visibility: 'public',
+          language: null,
+        },
+      ],
+    });
+    const reposData = await userRepositories(
+      {},
+      {
+        input: { username: 'felipepxavier' },
+      }
+    );
+
+    expect(reposData.repositories[0].language.name).toBe('não informado');
+    expect(reposData.total).toBe(1);
+  });
 });
