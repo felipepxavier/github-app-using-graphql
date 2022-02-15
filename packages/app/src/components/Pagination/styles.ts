@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export const ContainerNavigate = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
@@ -21,5 +26,13 @@ export const ButtonNavigation = styled.button.attrs(() => ({ type: 'button' }))`
       color: ${theme.colors.primary};
       transform: scale(1.4);
     }
+  `}
+`;
+
+export const Resume = styled.div`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+    font-weight: ${theme.font.bold};
+    color: ${theme.colors.gray};
   `}
 `;
