@@ -35,4 +35,18 @@ describe('<Pagination />', () => {
 
     expect(screen.getByText('Pág. 3 de 11')).toBeInTheDocument();
   });
+
+  it('should not change current page if not exists', () => {
+    renderWithTheme(<Pagination totalReposities={110} perPage={10} />);
+    const previousButton = screen.getByRole('button', {
+      name: 'Página anterior',
+    });
+    const nextButton = screen.getByRole('button', { name: 'Próxima página' });
+    fireEvent.click(nextButton);
+    fireEvent.click(nextButton);
+    fireEvent.click(nextButton);
+    fireEvent.click(previousButton);
+
+    expect(screen.getByText('Pág. 3 de 11')).toBeInTheDocument();
+  });
 });
