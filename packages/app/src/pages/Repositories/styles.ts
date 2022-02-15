@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div``;
 export const ErrorMessage = styled.p`
   display: flex;
   height: 55rem;
@@ -10,5 +9,19 @@ export const ErrorMessage = styled.p`
   ${({ theme }) => css`
     font-weight: ${theme.font.bold};
     font-size: ${theme.font.sizes.xlarge};
+  `}
+`;
+
+export const WrapperLink = styled.div`
+  ${({ theme }) => css`
+    svg {
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.xxlarge};
+      color: ${theme.colors.gray};
+
+      &:hover {
+        color: ${theme.colors.primary};
+      }
+    }
   `}
 `;

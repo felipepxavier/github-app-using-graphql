@@ -1,8 +1,9 @@
 import { useQuery } from '@apollo/client';
 import { FaGithub } from 'react-icons/fa';
 import { Card } from 'components/Card';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { GET_REPOSITORIES } from 'schemas/get-repositories';
 import { Input } from 'components/Input';
 import { Loading } from 'components/Loading';
@@ -48,6 +49,13 @@ function Repositories() {
       <Card
         title={`Repositórios de ${username}`}
         iconTitle={<FaGithub size={22} />}
+        linkTitle={
+          <S.WrapperLink>
+            <Link to={'/'} data-testid="link">
+              <MdKeyboardArrowLeft size={34} />
+            </Link>
+          </S.WrapperLink>
+        }
       >
         <>
           <Input placeholder="Pesquisar..." onChange={handleFilterRepository} />

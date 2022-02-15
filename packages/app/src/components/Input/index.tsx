@@ -20,6 +20,7 @@ function Input({ onChange, placeholder, callbackOnClickButton }: InputProps) {
   }, []);
 
   const handleEnter = (event: KeyboardEvent) => {
+    /* istanbul ignore else */
     if (event.key === 'Enter') {
       callbackOnClickButton && callbackOnClickButton(currentValue);
     }
