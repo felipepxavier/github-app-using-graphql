@@ -49,10 +49,12 @@ export const Content = styled.div`
 export const Footer = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
 `;
 
 export const ButtonMoreInfo = styled.button.attrs(() => ({ type: 'button' }))`
   border: none;
+  background: transparent;
 
   ${({ theme }) => css`
   > svg {
@@ -66,5 +68,27 @@ export const ButtonMoreInfo = styled.button.attrs(() => ({ type: 'button' }))`
       color: ${theme.colors.primary};
     }
     
+  `}
+`;
+
+export const ContentMoreInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const InfoText = styled.p`
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall} 0;
+    font-size: ${theme.font.sizes.small};
+  `}
+`;
+
+export const Status = styled.span`
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xsmall};
+    font-size: ${theme.font.sizes.small};
+    border-radius: ${theme.border.radius};
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.gray};
+    width: max-content;
   `}
 `;

@@ -18,8 +18,17 @@ export type ListProps = {
   listData: RepositoryProps[];
 };
 
+type ExpandedProps = {
+  [key: string]: boolean;
+};
+
 function ListRepositories({ listData }: ListProps) {
-  const [expandedButton, setExpandedButton] = useState(false);
+  const [expandedButton, setExpandedButton] = useState(() =>
+    listData.reduce(
+      (acc, repos) => (acc = { ...acc, [repos.name]: false }),
+      {} as ExpandedProps
+    )
+  );
   return (
     <S.Container>
       {listData.map((repository) => (
@@ -36,13 +45,18 @@ function ListRepositories({ listData }: ListProps) {
             <S.Footer>
               <S.ButtonMoreInfo
                 aria-label="abrir mais informações do repositório"
-                aria-expanded={expandedButton}
-                onClick={() => setExpandedButton(!expandedButton)}
+                aria-expanded={expandedButton[repository.name]}
+                onClick={() =>
+                  setExpandedButton((oldState) => ({
+                    ...oldState,
+                    [repository.name]: !expandedButton[repository.name],
+                  }))
+                }
               >
                 <MdKeyboardArrowDown />
               </S.ButtonMoreInfo>
 
-              {expandedButton && (
+              {expandedButton[repository.name] && (
                 <S.ContentMoreInfo>
                   <S.InfoText>{repository.description}</S.InfoText>
                   <S.Status> {repository.visibility} </S.Status>
