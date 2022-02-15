@@ -20,6 +20,7 @@ export default {
   colors: {
     primary: '#4562ba',
     secondary: '#eee',
+    blueLight: '#cbd6f4',
     grayLight: '#ddd',
     gray: '#737373',
     white: '#ffffff',

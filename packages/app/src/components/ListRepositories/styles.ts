@@ -52,20 +52,33 @@ export const Footer = styled.div`
   flex-direction: column;
 `;
 
-export const ButtonMoreInfo = styled.button.attrs(() => ({ type: 'button' }))`
+type ButtonProps = {
+  isExpanded: boolean;
+};
+
+export const ButtonMoreInfo = styled.button.attrs(() => ({
+  type: 'button',
+}))<ButtonProps>`
   border: none;
   background: transparent;
 
-  ${({ theme }) => css`
+  ${({ theme, isExpanded }) => css`
   > svg {
-    font-size: ${theme.font.sizes.xxlarge};
-    color: ${theme.colors.blueLight};
+    font-size: 3.4rem;
+    color: ${theme.colors.gray};
     transition: transform 250ms;
+    transform: ${isExpanded ? `rotate(180deg)` : ''};
     cursor: pointer;
 
     &:hover {
-      transform: scale(1.6);
+      transform: scale(1.4) ${isExpanded ? `rotate(180deg)` : ''};
       color: ${theme.colors.primary};
+
+      
+    }
+
+    @media (min-width: 768px) {
+      font-size: 4.8rem;
     }
     
   `}

@@ -47,6 +47,7 @@ function ListRepositories({ listData }: ListProps) {
               <S.ButtonMoreInfo
                 aria-label="abrir mais informações do repositório"
                 aria-expanded={expandedButton[repository.name]}
+                isExpanded={expandedButton[repository.name]}
                 onClick={() =>
                   setExpandedButton((oldState) => ({
                     ...oldState,
