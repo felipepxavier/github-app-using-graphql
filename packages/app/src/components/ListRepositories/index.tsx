@@ -35,11 +35,12 @@ function ListRepositories({ listData }: ListProps) {
             {repository.visibility} */}
 
             <S.Footer>
-              <MdKeyboardArrowDown
-                role="button"
+              <S.ButtonMoreInfo
                 aria-label="abrir mais informações do repositório"
                 aria-expanded="false"
-              />
+              >
+                <MdKeyboardArrowDown />
+              </S.ButtonMoreInfo>
             </S.Footer>
           </>
         </S.Repository>

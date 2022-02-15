@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { ListRepositories } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
 
@@ -43,9 +43,9 @@ describe('<ListRepositories />', () => {
         visibility: 'public',
       },
     ];
-    const { container } = renderWithTheme(<ListRepositories listData={list} />);
+    renderWithTheme(<ListRepositories listData={list} />);
 
-    const buttonSvg = container.querySelector('svg');
-    expect(buttonSvg).toBeInTheDocument();
+    const buttons = screen.getAllByRole('button');
+    expect(buttons).toHaveLength(2);
   });
 });
