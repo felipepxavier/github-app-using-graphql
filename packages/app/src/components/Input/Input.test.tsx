@@ -125,4 +125,20 @@ describe('<Input />', () => {
     expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
     expect(callbackOnClickButtonMocked).toHaveBeenCalledWith(currentValue);
   });
+
+  it('should not call callbackOnClickButton function if press enter', () => {
+    const callbackOnClickButtonMocked = jest.fn();
+    makeSut({
+      callbackOnClickButton: callbackOnClickButtonMocked,
+    });
+
+    const currentValue = 'valueMocked';
+
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+
+    fireEvent.change(inputDefault, { target: { value: `${currentValue}` } });
+    fireEvent.keyPress(inputDefault, { key: 'Space', keyCode: 32 });
+
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(0);
+  });
 });
