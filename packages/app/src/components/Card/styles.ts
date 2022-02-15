@@ -17,15 +17,24 @@ export const Container = styled.div`
 export const Header = styled.header`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   ${({ theme }) => css`
     margin-bottom: ${theme.spacings.small};
-    gap: ${theme.spacings.xxsmall};
   `}
 `;
 
 export const Title = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.large};
+  `}
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  ${({ theme }) => css`
+    gap: ${theme.spacings.xxsmall};
   `}
 `;

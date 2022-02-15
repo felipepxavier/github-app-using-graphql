@@ -4,13 +4,18 @@ export type CardProps = {
   title: string;
   children: JSX.Element;
   iconTitle?: JSX.Element;
+  linkTitle?: JSX.Element;
 };
-function Card({ title, children, iconTitle }: CardProps) {
+function Card({ title, children, iconTitle, linkTitle: Link }: CardProps) {
   return (
     <S.Container>
       <S.Header>
-        {iconTitle && iconTitle}
-        <S.Title>{title}</S.Title>
+        <S.TitleWrapper>
+          {iconTitle && iconTitle}
+          <S.Title>{title}</S.Title>
+        </S.TitleWrapper>
+
+        {Link && Link}
       </S.Header>
       {children}
     </S.Container>

@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../utils/tests/helpers';
+import { renderWithThemeEndRouter } from '../../utils/tests/helpers';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { Card } from '.';
-import { Link } from 'react-router-dom';
 
 type makeSutProps = {
   title?: string;
@@ -22,7 +22,7 @@ const makeSut = (
     children: <span>children</span>,
   }
 ) => {
-  renderWithTheme(
+  renderWithThemeEndRouter(
     <Card title={title} iconTitle={iconTitle} linkTitle={linkTitle}>
       {children}
     </Card>
