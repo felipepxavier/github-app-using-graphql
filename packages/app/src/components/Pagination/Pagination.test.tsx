@@ -118,6 +118,6 @@ describe('<Pagination />', () => {
       />
     );
 
-    expect(screen.getByText('Pág. 1 de 11')).toBeInTheDocument();
+    expect(screen.getByText('Pág. 1 de 1')).toBeInTheDocument();
   });
 });

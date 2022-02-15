@@ -4,17 +4,23 @@ import * as S from './styles';
 export type PaginationProps = {
   totalReposities: number;
   perPage: number;
+  callbackPageCurrent: (currentPage: number) => void;
 };
-function Pagination({ perPage, totalReposities }: PaginationProps) {
+function Pagination({
+  perPage,
+  totalReposities,
+  callbackPageCurrent,
+}: PaginationProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPage = useMemo(() => {
-    return totalReposities / perPage;
+    return Math.round(totalReposities / perPage);
   }, []);
 
   const handlePreviousPage = () => {
     const previousPage = currentPage - 1;
     if (previousPage > 0) {
       setCurrentPage(previousPage);
+      callbackPageCurrent(previousPage);
     }
   };
 
@@ -22,6 +28,7 @@ function Pagination({ perPage, totalReposities }: PaginationProps) {
     const nextPage = currentPage + 1;
     if (nextPage <= totalPage) {
       setCurrentPage(nextPage);
+      callbackPageCurrent(nextPage);
     }
   };
 
