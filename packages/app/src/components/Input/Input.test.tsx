@@ -108,4 +108,21 @@ describe('<Input />', () => {
       borderColor: '#737373',
     });
   });
+
+  it('should call callbackOnClickButton function if press enter', () => {
+    const callbackOnClickButtonMocked = jest.fn();
+    makeSut({
+      callbackOnClickButton: callbackOnClickButtonMocked,
+    });
+
+    const currentValue = 'valueMocked';
+
+    const inputDefault = screen.getByPlaceholderText(/digite o username/i);
+
+    fireEvent.change(inputDefault, { target: { value: `${currentValue}` } });
+    fireEvent.keyPress(inputDefault, { key: 'Enter', keyCode: 13 });
+
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledTimes(1);
+    expect(callbackOnClickButtonMocked).toHaveBeenCalledWith(currentValue);
+  });
 });
