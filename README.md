@@ -1,24 +1,21 @@
 ## 📚 **Sobre**
 
-Este projeto trata-se de duas aplicações, criei um monorepo com lerna para centralizar todas as dependências.
-<br />
+ <p>Este projeto trata-se de duas aplicações, criei um <code>monorepo</code> com <code>lerna</code> para centralizar todas as dependências.</p>
 
-<h3> 
-   app (Frontend)
-</h3>
+## **app (Frontend)**
 
 Aplicação consumindo a API GraphQL.
 <br />
-features:
-<br />
+
+### _features:_
+
 ✔️ Consultar usuários do Github <br />
 ✔️ Visualizar repositórios do usuário <br />
 ✔️ Pesquisar repositórios do usuário <br />
-<br />
 
 > ## Metodologias
 
-- TDD
+- TDD (Test Driven Development)
 - Conventional Commits
 - Mobile First
 
@@ -35,17 +32,15 @@ features:
 - Eslint
 - Prettier
 
-<br />
-<h3> 
-    graphql-api (Backend)
-</h3>
+## **graphql-api (Backend)**
+
 Aplicação consumindo a API REST do Github e retornando via GraphQL com algumas pequenas modificações.
 <br />
 <br />
 
 > ## Metodologias e Designs
 
-- TDD
+- TDD (Test Driven Development)
 - Conventional Commits
 
 > ## Bibliotecas e Ferramentas
@@ -75,5 +70,20 @@ $ yarn
 
 # Execute a aplicação em modo de desenvolvimento
 $ yarn start
+
+```
+
+<br />
+
+### 📖 **Documentação de componentes (Storybook)**
+
+```bash
+
+# Acesse a pasta do projeto frontend
+$ cd github-app-using-graphql
+
+$ cd packages
+$ cd app
+$ yarn storybook
 
 ```
