@@ -12,7 +12,7 @@
 
 ## 📚 **Sobre**
 
- <p>Este projeto trata-se de duas aplicações, criei um <code>monorepo</code> com <code>lerna</code> para centralizar todas as dependências.</p>
+ <p>Este projeto trata-se de duas aplicações, criei um monorepo com <code>lerna</code> para centralizar todas as dependências.</p>
 
 ## <code> **app (Frontend)** </code>
 
@@ -39,7 +39,6 @@ Aplicação consumindo a API GraphQL.
 - React Router DOM
 - Storybook
 - Jest
-- Lerna
 - Yarn
 - Eslint
 - Prettier
