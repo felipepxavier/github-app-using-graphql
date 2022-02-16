@@ -1,8 +1,10 @@
 const api = require('../../services/api');
 
 module.exports = {
-  async userRepositories(_, { input: { username } }) {
-    const responseInfo = await api.get(`users/${username}/repos`);
+  async userRepositories(_, { input: { username, page = 1 } }) {
+    const responseInfo = await api.get(
+      `users/${username}/repos?per_page=10&page=${page}`
+    );
     const repositiesData = responseInfo.data;
 
     const setColorLanguage = (language) => {

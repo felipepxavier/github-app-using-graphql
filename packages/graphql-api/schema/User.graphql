@@ -34,3 +34,7 @@ type ResponseRepositories {
 input UserInput {
   username: String
 }
+input RepositoriesInput {
+  username: String
+  page: String
+}

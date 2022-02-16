@@ -11,7 +11,7 @@ export const Repository = styled.li`
     padding: 1rem ${theme.spacings.small};
     border-radius: ${theme.border.radius};
     background-color: rgba(69, 98, 186, 0.1);
-    margin: ${theme.spacings.small};
+    margin: ${theme.spacings.small} 0;
 
     border: solid 2px ${theme.colors.blueLight};
     transition: all 250ms;
@@ -43,7 +43,7 @@ export const Content = styled.div`
   justify-content: space-between;
 
   ${({ theme }) => css`
-    padding: ${theme.spacings.small} 0;
+    padding-top: ${theme.spacings.small};
   `}
 `;
 

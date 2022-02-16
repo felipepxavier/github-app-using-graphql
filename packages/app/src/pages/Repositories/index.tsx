@@ -1,21 +1,41 @@
-import { useQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
 import { FaGithub } from 'react-icons/fa';
 import { Card } from 'components/Card';
-import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { GET_REPOSITORIES } from 'schemas/get-repositories';
 import { Input } from 'components/Input';
 import { Loading } from 'components/Loading';
 import { ListRepositories, RepositoryProps } from 'components/ListRepositories';
+import { Pagination } from 'components/Pagination';
 import * as S from './styles';
 
 function Repositories() {
   const [valueFiltered, setValueFiltered] = useState([]);
-  const { username } = useParams();
-  const { loading, error, data } = useQuery(GET_REPOSITORIES, {
-    variables: { input: { username: username } },
-  });
+  const navigate = useNavigate();
+  const { dataUser } = useParams();
+  const username = dataUser?.split('&')[0];
+  const quantityRepository = Number(dataUser?.split('&')[1]);
+
+  useEffect(() => {
+    if (!username || !quantityRepository) {
+      navigate('/');
+    }
+  }, []);
+
+  const [getRepositories, { loading, error, data }] =
+    useLazyQuery(GET_REPOSITORIES);
+
+  const callbackPageCurrent = (currentPage: number) => {
+    getRepositories({
+      variables: { input: { username, page: String(currentPage) } },
+    });
+  };
+
+  useEffect(() => {
+    callbackPageCurrent(1);
+  }, []);
 
   let time: ReturnType<typeof setTimeout>;
   const handleFilterRepository = (
@@ -61,9 +81,17 @@ function Repositories() {
           <Input placeholder="Pesquisar..." onChange={handleFilterRepository} />
 
           {data?.userRepositories.repositories && (
-            <ListRepositories listData={changeContent} />
+            <>
+              <S.Resume>({changeContent.length}) encontrados</S.Resume>
+              <ListRepositories listData={changeContent} />
+            </>
           )}
           {error && <S.ErrorMessage>Nada encontrado :/</S.ErrorMessage>}
+          <Pagination
+            perPage={10}
+            totalReposities={quantityRepository}
+            callbackPageCurrent={callbackPageCurrent}
+          />
         </>
       </Card>
 

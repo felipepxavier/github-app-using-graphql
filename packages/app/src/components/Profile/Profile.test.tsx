@@ -44,7 +44,7 @@ describe('<Profile />', () => {
     expect(buttonRepositories).toBeInTheDocument();
     expect(buttonRepositories).toHaveAttribute(
       'href',
-      `/repositorios/${myInfo.username}`
+      `/repositorios/${myInfo.username}&${myInfo.public_repos}`
     );
   });
 });

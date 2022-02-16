@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/repositorios/:username" element={<Repositories />} />
+          <Route path="/repositorios/:dataUser" element={<Repositories />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -1,4 +1,4 @@
 type Query {
   user(input: UserInput): User
-  userRepositories(input: UserInput): ResponseRepositories
+  userRepositories(input: RepositoriesInput): ResponseRepositories
 }

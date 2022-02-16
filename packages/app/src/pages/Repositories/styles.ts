@@ -25,3 +25,11 @@ export const WrapperLink = styled.div`
     }
   `}
 `;
+
+export const Resume = styled.p`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.bold};
+    font-size: ${theme.font.sizes.small};
+    margin-top: ${theme.spacings.small};
+  `}
+`;

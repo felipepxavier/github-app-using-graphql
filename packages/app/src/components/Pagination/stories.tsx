@@ -13,4 +13,7 @@ export const Default: Story<PaginationProps> = (args) => (
 Default.args = {
   totalReposities: 110,
   perPage: 10,
+  callbackPageCurrent: (currentPage: number) => {
+    console.log('currentPage =>', currentPage);
+  },
 };
