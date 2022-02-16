@@ -2,7 +2,7 @@
 
  <p>Este projeto trata-se de duas aplicações, criei um <code>monorepo</code> com <code>lerna</code> para centralizar todas as dependências.</p>
 
-## **app (Frontend)**
+## <code> **app (Frontend)** </code>
 
 Aplicação consumindo a API GraphQL.
 <br />
@@ -32,7 +32,7 @@ Aplicação consumindo a API GraphQL.
 - Eslint
 - Prettier
 
-## **graphql-api (Backend)**
+## <code> **graphql-api (Backend)** </code>
 
 Aplicação consumindo a API REST do Github e retornando via GraphQL com algumas pequenas modificações.
 <br />
