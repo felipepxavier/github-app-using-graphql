@@ -82,7 +82,7 @@ function Repositories() {
 
           {data?.userRepositories.repositories && (
             <>
-              <S.Resume>({changeContent.length}) encontrados</S.Resume>
+              <S.Resume>({changeContent.length}) itens por página</S.Resume>
               <ListRepositories listData={changeContent} />
             </>
           )}
