@@ -38,6 +38,7 @@ Aplicação consumindo a API GraphQL.
 - React Testing Library
 - React Router DOM
 - Storybook
+- Apollo Client
 - Jest
 - Yarn
 - Eslint

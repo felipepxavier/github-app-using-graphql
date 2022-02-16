@@ -24,6 +24,7 @@ features:
 - React Testing Library
 - React Router DOM
 - Storybook
+- Apollo Client
 - Jest
 - Lerna
 - Yarn
