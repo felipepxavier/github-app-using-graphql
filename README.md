@@ -49,7 +49,7 @@ Aplicação consumindo a API REST do Github e retornando via GraphQL com algumas
 <br />
 <br />
 
-> ## Metodologias e Designs
+> ## Metodologias
 
 - TDD (Test Driven Development)
 - Conventional Commits
