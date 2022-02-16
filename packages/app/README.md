@@ -23,6 +23,7 @@ features:
 - React
 - React Testing Library
 - React Router DOM
+- Styled Components
 - Storybook
 - Apollo Client
 - Jest
@@ -30,3 +31,16 @@ features:
 - Yarn
 - Eslint
 - Prettier
+
+### 📖 **Documentação de componentes (Storybook)**
+
+```bash
+
+# Acesse a pasta do projeto frontend
+$ cd github-app-using-graphql
+
+$ cd packages
+$ cd app
+$ yarn storybook
+
+```
