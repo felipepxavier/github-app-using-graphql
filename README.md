@@ -1,3 +1,15 @@
+<div align=center>
+
+<h3>
+
+    github-app-using-graphql
+
+</h3>
+
+![PRINTS](./packages/app/public/app-github-graphql.gif)
+
+</div>
+
 ## 📚 **Sobre**
 
  <p>Este projeto trata-se de duas aplicações, criei um <code>monorepo</code> com <code>lerna</code> para centralizar todas as dependências.</p>
